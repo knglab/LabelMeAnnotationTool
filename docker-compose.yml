@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+
+  labelme:
+    build: DockerFiles/ubuntu_16.04
+    container_name: labelme
+    restart: unless_stopped
+    ports:
+      - $PORT:80
+    volumes:
+      - $DATA:/var/www/html/LabelMeAnnotationTool
+    env_file:
+      - env
