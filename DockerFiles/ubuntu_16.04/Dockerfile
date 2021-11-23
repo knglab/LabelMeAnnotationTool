@@ -16,6 +16,7 @@ RUN apt-get install -y \
 
 # Throws error 				
 #RUN apt-get install php5 libapache2-mod-php5 -y
+RUN echo "ServerName localhost" | tee /etc/apache2/conf-available/fqdn.conf && a2enconf fqdn
 
 # Config apache
 RUN a2enmod include
